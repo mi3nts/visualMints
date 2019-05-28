@@ -60,7 +60,7 @@ def animateAudio(i):
             print("----------------------")
             legendsIn = [dateTimePatch,bluePatch]
             ax1.clear()
-            ax1.plot(frequenciesIn,amplitudesIn)
+            ax1.plot(frequenciesIn,amplitudesIn,color="blue")
             ax1.set_ylabel("Amplitude")
             ax1.set_xlabel("Frequency(Hz)")
             ax1.set_title("Amplitude vs Frequency - "+ SensorName)
@@ -68,6 +68,7 @@ def animateAudio(i):
 
     except KeyboardInterrupt:
         print("-- MINTS QUITING --")
+        ax1.close()
 
     except:
         pass
