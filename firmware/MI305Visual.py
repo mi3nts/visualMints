@@ -48,13 +48,8 @@ def animateAudio(i):
         frequenciesIn = np.linspace(0.0, 1.0/(2.0*INTERVAL), CHUNK//2)
         MI305 ,valid    = mV.readJSONLatestAll(SensorName)
         if(valid):
-            for (keyIn,valueIn) in MI305.items():
-                if keyIn == "dateTime":
-                    dateTime = str(valueIn)
-
-                else:
-                    amplitudesIn.append(valueIn)
-
+            dateTime     = MI305['dateTime']
+            amplitudesIn = MI305['amplitudes']
             maxInd = np.argmax(amplitudesIn)
             maxFrequency = frequenciesIn[maxInd]
             dateTimePatch = mpatches.Patch(color='black', label="Last Updated: " + str(dateTime))
@@ -70,6 +65,7 @@ def animateAudio(i):
             ax1.set_xlabel("Frequency(Hz)")
             ax1.set_title("Amplitude vs Frequency - "+ SensorName)
             ax1.legend(handles=legendsIn)
+
     except KeyboardInterrupt:
         print("-- MINTS QUITING --")
 
