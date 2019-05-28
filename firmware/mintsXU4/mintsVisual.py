@@ -17,7 +17,7 @@ import numpy as np
 from mintsXU4 import mintsDefinitions as mD
 
 dataFolder = mD.dataFolder
-macAddress ="0242a1ee49fb"
+macAddress = mD.macAddress
 
 
 def writeJSONLatest(sensorDictionary,sensorName):
