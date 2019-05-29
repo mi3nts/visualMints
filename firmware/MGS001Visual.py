@@ -51,7 +51,7 @@ def animateMGS001(i):
                         float(MGS001['c4h10']),\
                         float(MGS001['ch4']),\
                         float(MGS001['h2']),\
-                        float(MGS001['c2h5oh  '])\
+                        float(MGS001['c2h5oh'])\
                         ]
 
             dateTimePatch = mpatches.Patch(color='black', label="Last Updated: " + str(dateTime))
